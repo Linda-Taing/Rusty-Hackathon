@@ -7,5 +7,6 @@ export class Mater{
     this.type = data.type
     this.language = data.language
     this.id = data.id
+    this.imgUrl = data.imgUrl
   }
 }
