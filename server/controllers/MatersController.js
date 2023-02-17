@@ -41,7 +41,7 @@ export class MatersController extends BaseController {
     }
   }
 }
-  }
+
 
   //       // Routes go here
   //       .get('', this.getAllBirds)
@@ -89,4 +89,3 @@ export class MatersController extends BaseController {
   //       next(error)
   //     }
   //   }
-}
