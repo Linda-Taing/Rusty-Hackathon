@@ -1,5 +1,6 @@
 import { Schema } from "mongoose";
 
+
 export const MaterSchema = new Schema(
     {
         name: { type: String, required: true, minLength: 2, maxLength: 30 },
