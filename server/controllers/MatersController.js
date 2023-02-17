@@ -11,6 +11,8 @@ export class MatersController extends BaseController {
       .get('/:materId', this.getMaterById)
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.createMater)
+      .put('/:materId', this.updateMater)
+
   }
   async getMaterById(req, res, next) {
     try {
@@ -40,5 +42,15 @@ export class MatersController extends BaseController {
       next(error)
     }
   }
-}
 
+  async updateMater(req, res, next) {
+    try {
+      const user = req.userInfo
+      req.body.materId = user.id
+      const newMater = await matersService.updateMater(req.params.materId, req.body)
+      return res.send(newMater)
+    } catch (error) {
+      next(error)
+    }
+  }
+}
