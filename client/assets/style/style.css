@@ -1,4 +1,37 @@
+body{
+    background-image: url(https://i.pinimg.com/originals/0f/5f/65/0f5f65a27505e467edbd12653ec29869.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
 .header-mater{
     background-color: #673f25;
     color: #66cfc1;
+}
+
+.foreign-prof{
+    border: 2px solid black;
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #66cfc1;
+
+}
+
+.foreign-prof-img{
+max-height: 100%;
+max-width: 100%;
+}
+
+.bio-class{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-top: 1px solid #8080808f;
+    border-bottom: 1px solid #8080808f;
+}
+
+.view-profile{
+    background-color: #673f25;
+    color: white;
+    text-shadow: #66cfc1 1px 0 10px;
 }
