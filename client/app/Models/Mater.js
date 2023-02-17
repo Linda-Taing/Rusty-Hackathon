@@ -8,6 +8,7 @@ export class Mater{
     this.language = data.language
     this.id = data.id
     this.img = this.GenerateImage
+    this.creatorId = data.creatorId
   }
 
 
