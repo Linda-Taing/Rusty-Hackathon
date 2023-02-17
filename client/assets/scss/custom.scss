@@ -1,7 +1,7 @@
 @each $color, $value in $colors {
   .bg-#{$color} {
     color: color-yiq($value);
-    background-color: $value !important;
+    background-color: $value;
   }
   .text-#{$color} {
     color: $value !important;

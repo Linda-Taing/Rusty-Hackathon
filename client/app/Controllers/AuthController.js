@@ -23,6 +23,7 @@ function _drawAuthSettings() {
   <div class="card p-2 elevation-4">
     <div class="card-title p-2">
       <div class="d-flex align-items-center">
+      // FIXME add onclick to get to your account offcanvas|||||||||||add button to toggle editable status
         <div class="avatar">
           <img src="https://avatars.githubusercontent.com/u/2824157?s=280&v=4" alt="user" height="45" class="rounded-circle">
         </div>
