@@ -4,20 +4,30 @@ import BaseController from "../utils/BaseController.js"
 
 
 export class MatersController extends BaseController {
-  constructor () {
+  constructor() {
     super('api/maters')
     this.router
-    .get('', this.getAllMaters)
-    .use(Auth0Provider.getAuthorizedUserInfo)
-    .post('',this.createMater)
+      .get('', this.getAllMaters)
+      .get('/:materId', this.getMaterById)
+      .use(Auth0Provider.getAuthorizedUserInfo)
+      .post('', this.createMater)
+  }
+  async getMaterById(req, res, next) {
+    try {
+      const maters = await matersService.getAllMaters()
+      return res.send(maters)
+    } catch (error) {
+      next(error)
+    }
+
   }
 
-  async getAllMaters(req, res, next){
+  async getAllMaters(req, res, next) {
     try {
-        const maters = await matersService.getAllMaters()
-        return res.send(maters)
+      const maters = await matersService.getAllMaters()
+      return res.send(maters)
     } catch (error) {
-        next(error)  
+      next(error)
     }
   }
   async createMater(req, res, next) {
@@ -30,6 +40,5 @@ export class MatersController extends BaseController {
       next(error)
     }
   }
-
-
 }
+
