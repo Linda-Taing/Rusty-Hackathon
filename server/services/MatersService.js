@@ -22,21 +22,18 @@ class MatersService {
     return updatedMater
   }
 
-  async getMatersById(req, res, next) {
-    try {
-      const maters = await matersService.getMatersById(req.params.materId)
-      return res.send(maters)
-    } catch (error) {
-      next(error)
-    }
+  async getMaterById(materId) {
+
+    const maters = await dbContext.Maters.find(materId)
+    return maters
   }
-
-
-
-
-
-
-
 }
+
+
+
+
+
+
+
 
 export const matersService = new MatersService()
