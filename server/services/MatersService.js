@@ -19,6 +19,13 @@ class MatersService {
     return newMater
   }
 
+  async updateMater(materId, body) {
+    const updatedMater = await dbContext.Maters.findByIdAndUpdate(materId, body, { new: true })
+    await updatedMater.populate('Creator', 'name')
+    return updatedMater
+  }
+
+
 
 
 
