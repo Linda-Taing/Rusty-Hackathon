@@ -25,9 +25,10 @@ export class MatersController{
     }
   }
 
-  async getMatersById(materId){
+  getMatersById(materId){
     try {
-      await matersService.getMatersById(materId)
+      debugger
+      matersService.getMatersById(materId)
     } catch (error) {
       console.error(error);
     }
