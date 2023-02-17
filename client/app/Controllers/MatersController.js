@@ -1,14 +1,20 @@
 import { appState } from "../AppState.js";
 import { matersService } from "../Services/MatersService.js";
 import { getFormData } from "../Utils/FormHandler.js";
+import { setHTML } from "../Utils/Writer.js";
 
 
-
+function _drawMaters(){
+  let template = " "
+  appState.maters.forEach(m => template += m.ProfileTemplate)
+  setHTML('foreign-profiles', template)
+}
 
 export class MatersController{
 
   constructor(){
     this.getMaters()
+    appState.on('maters', _drawMaters)
   }
 
   async getMaters(){
@@ -19,9 +25,9 @@ export class MatersController{
     }
   }
 
-  async getMatersById(materId){
+  getMatersById(materId){
     try {
-      await matersService.getMatersById(materId)
+      matersService.getMatersById(materId)
     } catch (error) {
       console.error(error);
     }
@@ -36,6 +42,18 @@ export class MatersController{
     } catch (error) {
       console.error(error);
     }
+  }
+
+  async updateMater(materId){
+    try {
+    window.event.preventDefault()
+    const form = window.event.target
+    const formData = getFormData(form)
+    await matersService.updateMater(materId, formData)
+    } catch (error) {
+      console.error(error);
+    }
+    
   }
 
 }
