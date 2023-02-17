@@ -17,7 +17,7 @@ export class MatersController extends BaseController {
 
   async getMaterById(req, res, next) {
     try {
-      const maters = await matersService.getAllMaters()
+      const maters = await matersService.getMaterById(req.params.materId)
       return res.send(maters)
     } catch (error) {
       next(error)
@@ -32,7 +32,7 @@ export class MatersController extends BaseController {
       next(error)
     }
   }
-  
+
   async createMater(req, res, next) {
     try {
       const user = req.userInfo
@@ -48,7 +48,9 @@ export class MatersController extends BaseController {
     try {
       const user = req.userInfo
       req.body.materId = user.id
-      const newMater = await matersService.updateMater(req.params.materId, req.body)
+      const materId = req.params.materId
+      const body = req.body
+      const newMater = await matersService.updateMater(materId, body)
       return res.send(newMater)
     } catch (error) {
       next(error)

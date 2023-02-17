@@ -27,7 +27,6 @@ export class MatersController{
 
   getMatersById(materId){
     try {
-      debugger
       matersService.getMatersById(materId)
     } catch (error) {
       console.error(error);
@@ -43,6 +42,18 @@ export class MatersController{
     } catch (error) {
       console.error(error);
     }
+  }
+
+  async updateMater(materId){
+    try {
+    window.event.preventDefault()
+    const form = window.event.target
+    const formData = getFormData(form)
+    await matersService.updateMater(materId, formData)
+    } catch (error) {
+      console.error(error);
+    }
+    
   }
 
 }
