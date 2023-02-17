@@ -40,6 +40,8 @@ export class MatersController extends BaseController {
       next(error)
     }
   }
+}
+  }
 
   //       // Routes go here
   //       .get('', this.getAllBirds)
