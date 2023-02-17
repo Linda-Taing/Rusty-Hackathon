@@ -12,19 +12,24 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
   <title>Mater's</title>
 </head>
 
 <body>
-  <header class="container-fluid header-mater bg-gradient">
+  <header class="container-fluid header-mater bg-gradient py-1">
     <div class="row">
       <div class="col-12 d-flex justify-content-between">
-        <h1>Mater's</h1>
-        <button>modal</button>
+        <h1 class="header-title">Mater's</h1>
+        <button class="user-profile-button bg-gradient" type="button" data-bs-toggle="offcanvas" data-bs-target="#user-profile" aria-controls="offcanvasExample">
+          Your Profile
+        </button>
       </div>
     </div>
-    <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate">
-    </div>
+    <!-- <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate">
+    </div> -->
   </header>
 
 
@@ -35,7 +40,7 @@
     
     <div class="row" id="foreign-profiles">
 
-      
+
       <div class="d-flex align-content-center col-4 foreign-prof bg-gradient">
         <div class="row">
           <div class="col-12">
@@ -170,8 +175,54 @@
 
 
 
-  <footer class="container-fluid bg-dark text-light">
+  <footer class="container-fluid sticky-bottom">
+    <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate">
+    </div>
   </footer>
+
+  <div class="offcanvas offcanvas-end user-profile-offcanvas bg-gradient" tabindex="-1" id="user-profile" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">${this.name}</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        <img class="mb-5 pb-5" src="https://robohash.org/roo" alt="">
+      </div>
+      <div>
+        ({this.bio})
+      </div>
+        <div class="m-3">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, reiciendis perspiciatis! A nesciunt debitis animi?
+      </div>
+      <!-- <div class="dropdown mt-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+          Dropdown button
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div> -->
+      <div class="container">
+        <div class="row user-profile-lists">
+          <div class="col-6 left-list">
+            <h4 class="user-profile-list-title">Your Likes</h4>
+            <h6>JoBot</h6>
+            <h6>JacoBot</h6>
+            <h6>RichBot</h6>
+            <h6>LindaBot</h6>
+            <h6>BryBot</h6>
+          </div>
+          <div class="col-6">
+            <h4 class="user-profile-list-title">Your Mutuals</h4>
+            <h6><span class="mdi mdi-robot-love" onclick=""></span>JoBot</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdn.auth0.com/js/auth0-spa-js/1.22/auth0-spa-js.production.js"></script>
