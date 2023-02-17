@@ -23,3 +23,10 @@ MaterSchema.virtual('Creator', {
     justOne: true,
     ref: 'Account'
 })
+
+MaterSchema.virtual('StatusUpdate', {
+    localField: '_id',
+    foreignField: 'materId',
+    justOne: true,
+    ref: 'StatusUpdate'
+})
