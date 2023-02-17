@@ -10,7 +10,7 @@ export const MaterSchema = new Schema(
             enum: ["Bender", "Assassin", "Battle", "Astromech", "Helper", "Toaster"],
             required: true
         },
-        imgUrl: { type: String, required: true },
+        imgUrl: { type: String },
         description: { type: String, maxLength: 300 },
         creatorId: { type: Schema.Types.ObjectId, required: true, ref: "Account" },
     },
@@ -27,6 +27,5 @@ MaterSchema.virtual('Creator', {
 MaterSchema.virtual('StatusUpdate', {
     localField: '_id',
     foreignField: 'materId',
-    justOne: true,
     ref: 'StatusUpdate'
 })
