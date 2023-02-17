@@ -1,4 +1,5 @@
 import { Schema } from "mongoose";
+import { MaterSchema } from "./Mater.js";
 
 export const StatusUpdateSchema = new Schema(
     {
