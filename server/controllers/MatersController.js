@@ -12,6 +12,7 @@ export class MatersController extends BaseController {
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.createMater)
   }
+
   async getMaterById(req, res, next) {
     try {
       const maters = await matersService.getAllMaters()
@@ -19,7 +20,6 @@ export class MatersController extends BaseController {
     } catch (error) {
       next(error)
     }
-
   }
 
   async getAllMaters(req, res, next) {
@@ -30,6 +30,7 @@ export class MatersController extends BaseController {
       next(error)
     }
   }
+  
   async createMater(req, res, next) {
     try {
       const user = req.userInfo

@@ -6,6 +6,7 @@ import { BadRequest } from "../utils/Errors.js"
 class MatersService {
     async getAllMaters(){
         const maters = await dbContext.Maters.find()
+        .populate('StatusUpdate')
         return maters
     }
 
