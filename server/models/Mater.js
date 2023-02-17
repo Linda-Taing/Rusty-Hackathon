@@ -7,7 +7,7 @@ export const MaterSchema = new Schema(
         voltage: { type: String, required: true, minLength: 2, maxLength: 10},
         type: {
             type: String,
-            enum: ["Bender", "Assassin", "Battle", "Astromech", "Helper"],
+            enum: ["Bender", "Assassin", "Battle", "Astromech", "Helper", "Toaster"],
             required: true
             },
         imgUrl: { type: String, required: true},
