@@ -3,9 +3,10 @@ import { Mater } from "../Models/Mater.js";
 import { server } from "./AxiosService.js"
 
 class MatersService{
-  async getMatersById(materId) {
-    const mater = await server.get('/api/maters')
-    appState.mater
+  getMatersById(materId) {
+    const mater = appState.maters.find(m => m.id == materId)
+    appState.mater = mater
+    console.log(appState.mater);
   }
   async createMater(formData) {
     const mater = await server.post('/api/maters')
@@ -18,6 +19,7 @@ class MatersService{
   async getMaters() {
     const maters = await server.get('/api/maters')
     appState.maters = maters.data.map(m => new Mater(m))
+    console.log(appState.maters);
   }
 
 
