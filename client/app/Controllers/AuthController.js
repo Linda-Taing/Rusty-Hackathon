@@ -15,7 +15,7 @@ function drawUser() {
   // @ts-ignore
   document.getElementById('authstate').innerHTML = template
 }
-
+// 
 function _drawAuthSettings() {
   const elem = document.getElementById('auth-settings')
   if (!elem) { return }
@@ -25,7 +25,9 @@ function _drawAuthSettings() {
       <div class="d-flex align-items-center">
       // FIXME add onclick to get to your account offcanvas|||||||||||add button to toggle editable status
         <div class="avatar">
-          <img src="https://avatars.githubusercontent.com/u/2824157?s=280&v=4" alt="user" height="45" class="rounded-circle">
+        <button>
+        <img src="https://avatars.githubusercontent.com/u/2824157?s=280&v=4" alt="user" height="45" class="rounded-circle">
+        </button>  
         </div>
         <div class="text mx-2">
           <b>Auth0 Settings</b>
@@ -80,8 +82,7 @@ function avatarTemplate(account) {
   return account.picture
     ? /* html */ `
     <div class="mr-2">
-      <img class="rounded-circle" src="${account.picture}" alt="${account.name}" height="45"/>
-      <span class="mx-1">${account.name}</span>
+      <img class="rounded-circle me-1" src="${account.picture}" alt="${account.name}" height="45"/>
       </div>`
     : AuthService.loading
       ? /* html */ `
@@ -91,3 +92,6 @@ function avatarTemplate(account) {
       <div></div>
       `
 }
+
+{/* <span class="mx-1">${account.name}</span> */}
+
