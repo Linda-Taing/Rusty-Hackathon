@@ -9,16 +9,17 @@ class MatersService {
         return maters
     }
 
-    async createMater(materData) {
-        const newMater = await dbContext.Maters.create(materData)
-        await newMater.populate('Creator', 'name')
-        return newMater
-      }
+      async createMater(materData) {
+    const newMater = await dbContext.Maters.create(materData)
+    await newMater.populate('Creator','name')
+    return newMater
+    }
 
-     async getAllMaters() {
-    const maters = await dbContext.Maters.find()
-    return maters
-  }
+
+
+
+
+
 }
 
 export const matersService = new MatersService()
