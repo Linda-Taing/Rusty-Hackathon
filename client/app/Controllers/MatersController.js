@@ -27,7 +27,6 @@ export class MatersController{
 
   getMatersById(materId){
     try {
-      debugger
       matersService.getMatersById(materId)
     } catch (error) {
       console.error(error);
