@@ -31,3 +31,4 @@ MaterSchema.virtual('StatusUpdate', {
     justOne: true,
     ref: 'StatusUpdate'
 })
+MaterSchema.index({ materId: 1, creatorId: 1 }, { unique: true })
