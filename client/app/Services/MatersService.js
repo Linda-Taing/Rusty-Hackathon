@@ -3,6 +3,13 @@ import { Mater } from "../Models/Mater.js";
 import { server } from "./AxiosService.js"
 
 class MatersService{
+  async updateMater(materId, formData) {
+    const materIndex = appState.maters.findIndex(m => m.id == materId)
+    const updatedMater = server.put(`/api/maters/${materId}`, formData)
+    const newMater = new Mater(updatedMater)
+    appState.maters.splice(materIndex, 1, newMater)
+    appState.emit('maters')
+  }
   getMatersById(materId) {
     const mater = appState.maters.find(m => m.id == materId)
     appState.mater = mater
