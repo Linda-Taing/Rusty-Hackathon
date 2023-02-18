@@ -14,7 +14,8 @@ export class LikersController extends BaseController {
 
   async becomeLiker(req, res, next) {
     try {
-      req.body.materId = req.param.materId
+      const user = req.userInfo
+      req.body.creatorId = user.id
       const liker = await likersService.becomeLiker(req.body)
       return res.send(liker)
     } catch (error) {
