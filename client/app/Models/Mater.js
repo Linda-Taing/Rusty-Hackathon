@@ -11,6 +11,7 @@ export class Mater{
     this.creatorId = data.creatorId
   }
 
+  
 
   get GenerateImage(){
     const image = `https://robohash.org/${this.id}`

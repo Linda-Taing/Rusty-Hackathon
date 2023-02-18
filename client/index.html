@@ -23,9 +23,27 @@
     <div class="row">
       <div class="col-12 d-flex justify-content-between">
         <h1 class="header-title">Mater's</h1>
-        <button class="user-profile-button bg-gradient" type="button" data-bs-toggle="offcanvas" data-bs-target="#user-profile" aria-controls="offcanvasExample">
-          Your Profile
-        </button>
+
+
+        <!--  -->
+    <div id="headerButton">
+      <div>
+        <!-- <div id="createProfile">
+          <button type="button" class="user-profile-button-edit" data-bs-toggle="modal" data-bs-target="#createModal">
+            Create Profile
+          </button>
+        </div> -->
+          <!--  -->
+        <div id="yourProfile">
+          <button class="user-profile-button bg-gradient" type="button" data-bs-toggle="offcanvas" data-bs-target="#user-profile" aria-controls="offcanvasExample">
+            Your Profile
+          </button>
+        </div>
+          <!--  -->
+      </div>
+    </div>
+
+
       </div>
     </div>
     <!-- <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate">
@@ -238,13 +256,13 @@
     </div>
   </div>
 
-  
-  <!-- Modal -->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+  <!-- Modal || Create Profile -->
+  <div class="modal fade" id="createModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Profile</h1>
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Create Profile</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -283,13 +301,61 @@
               <label for="exampleInputPassword1" class="form-label">Voltage</label>
               <input type="text" class="form-control" id="exampleInputPassword1">
             </div> -->
-
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Modal || Edit Profile-->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Profile</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="">
+            <div class="mb-3">
+              <label for="user2-name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="user2-name" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="user2-voltage" class="form-label">Voltage</label>
+              <input type="number" class="form-control" id="user2-voltage">
+            </div>
+            <div class="mb-3">
+              <label for="user2-language" class="form-label">Language</label>
+              <input type="text" class="form-control" id="user2-language">
+            </div>
+            <div class="mb-3">
+              <label for="user2-bio" class="form-label">Bio</label>
+              <input type="text" class="form-control" id="user2-bio">
+            </div>
+            <div class="mb-3">
+              <label for="user2-type" class="form-label">Type</label>
+              <select name="user2-type" id="user2-type">
+                <!-- NOTE Should probably make the 'selected' one ${this.type} 
+                                vvvvvv-->
+                <option selected>Type</option>
+                <option value="Protocol">Protocol</option>
+                <option value="Toaster">Toaster</option>
+                <option value="Bender">Bender</option>
+                <option value="Assassin">Assassin</option>
+                <option value="Astromech">Astromech</option>
+                <option value="Helper">Helper</option>
+              </select>
+            </div>
+            <!-- <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Voltage</label>
+              <input type="text" class="form-control" id="exampleInputPassword1">
+            </div> -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
         </div>
       </div>
     </div>
