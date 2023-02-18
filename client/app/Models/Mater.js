@@ -103,6 +103,46 @@ export class Mater{
     }
   
     
+    get MakeEditForm(){
+      return`
+      <form  onsubmit="app.matersController.updateMater('${this.id}')" action="">
+            <div class="mb-3">
+              <label for="user-name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="user-name" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="user-voltage" class="form-label">Voltage</label>
+              <input type="number" class="form-control" id="user-voltage">
+            </div>
+            <div class="mb-3">
+              <label for="user-language" class="form-label">Language</label>
+              <input type="text" class="form-control" id="user-language">
+            </div>
+            <div class="mb-3">
+              <label for="user-bio" class="form-label">Bio</label>
+              <input type="text" class="form-control" id="user-bio">
+            </div>
+            <div class="mb-3">
+              <label for="user-type" class="form-label">Type</label>
+              <select name="user-type" id="user-type">
+                <option selected>Type</option>
+                <option value="Protocol">Protocol</option>
+                <option value="Toaster">Toaster</option>
+                <option value="Bender">Bender</option>
+                <option value="Assassin">Assassin</option>
+                <option value="Astromech">Astromech</option>
+                <option value="Helper">Helper</option>
+              </select>
+            </div>
+            <!-- <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Voltage</label>
+              <input type="text" class="form-control" id="exampleInputPassword1">
+            </div> -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+      `
+    }
   }
+
 
 
