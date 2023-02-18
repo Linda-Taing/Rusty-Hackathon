@@ -28,6 +28,7 @@ export class MatersController{
     // this.setMater()
     appState.on('maters', _drawMaters)
     appState.on('mater', _drawMater)
+    appState.on('mater', this.createUpdateForm)
   }
 
   async getMaters(){
@@ -73,7 +74,10 @@ export class MatersController{
 
   createUpdateForm(){
     try {
-      
+      console.log("update form drawn");
+      if(!appState.mater){throw new Error('no valid profile!')}
+      let form = appState.mater.MakeEditForm
+      setHTML('updateForm', form)
     } catch (error) {
       console.error(error);
     }
