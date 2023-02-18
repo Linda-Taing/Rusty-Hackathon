@@ -3,6 +3,13 @@ import { Mater } from "../Models/Mater.js";
 import { server } from "./AxiosService.js"
 
 class MatersService{
+
+
+  async setMater(){
+  const accountId = appState.account.id
+  console.log(accountId);
+  appState.mater = appState.maters.find(m => m.creatorId == accountId)
+  }
   async updateMater(materId, formData) {
     const materIndex = appState.maters.findIndex(m => m.id == materId)
     const updatedMater = server.put(`/api/maters/${materId}`, formData)
@@ -10,11 +17,7 @@ class MatersService{
     appState.maters.splice(materIndex, 1, newMater)
     appState.emit('maters')
   }
-  getMatersById(materId) {
-    const mater = appState.maters.find(m => m.id == materId)
-    appState.mater = mater
-    console.log(appState.mater);
-  }
+
   async createMater(formData) {
     const mater = await server.post('/api/maters')
     console.log("creating mater data from server", mater.data);
