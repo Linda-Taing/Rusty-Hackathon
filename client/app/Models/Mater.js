@@ -37,7 +37,7 @@ export class Mater{
             <!-- NOTE possibly have an "onhover" where the heart becomes a solid icon? (might be a jonah thing) -->
             <h4 class="mdi mdi-heart-outline"></h4>
             <!-- NOTE onclick -> open up that users profile -->
-            <button class="view-profile"  data-bs-target="#activeModal" onclick="app.foreignProfilesController.activeMater('${this.id}')" >View Profile</button>
+            <button class="view-profile"  data-bs-target="#activeMater" onclick="app.foreignProfilesController.activeMater('${this.id}')" >View Profile</button>
           </div>
         </div>
       </div>
