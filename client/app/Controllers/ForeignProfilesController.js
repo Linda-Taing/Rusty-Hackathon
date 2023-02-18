@@ -5,7 +5,7 @@ export class ForeignProfilesController{
         
     }
     
-    activeMater(){
-        console.log('active mater');
+    activeMater(materId){
+        console.log('active mater', materId);
     }
 }
