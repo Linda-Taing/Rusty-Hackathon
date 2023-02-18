@@ -7,7 +7,7 @@ import { setHTML } from "../Utils/Writer.js";
 
 
 function _drawActiveMater(){
-    setHTML("activeMater", appState.activeMater.activeMater)
+    setHTML("activeMater", appState.activeMater.activeMaterTemplate)
 }
 
 export class ForeignProfilesController{

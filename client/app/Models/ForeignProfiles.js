@@ -2,7 +2,7 @@ export class ForeignProfiles{
 
 
 
-    get activeMater(){
+    get activeMaterTemplate(){
         return`
         <div class="d-flex align-content-center col-4 foreign-prof bg-gradient">
         <div class="row">
