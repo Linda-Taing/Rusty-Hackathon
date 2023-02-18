@@ -1,4 +1,5 @@
 import { appState } from "../AppState.js";
+import { accountService } from "../Services/AccountService.js";
 import { matersService } from "../Services/MatersService.js";
 import { getFormData } from "../Utils/FormHandler.js";
 import { setHTML } from "../Utils/Writer.js";
@@ -11,16 +12,16 @@ function _drawMaters(){
 }
 
 function _drawMater(){
-  debugger
   console.log(appState.mater);
-  setHTML('profile', appState.mater.MaterProfile)
+  let template = appState.mater.MaterProfile
+  setHTML('profile', template)
 }
 
 export class MatersController{
 
   constructor(){
     this.getMaters()
-    this.setMater()
+    // this.setMater()
     appState.on('maters', _drawMaters)
     appState.on('mater', _drawMater)
   }
@@ -28,19 +29,12 @@ export class MatersController{
   async getMaters(){
     try {
       const maters = await matersService.getMaters()
-      this.setMater()
     } catch (error) {
       console.error(error);
     }
   }
 
-  getMatersById(materId){
-    try {
-      matersService.getMatersById(materId)
-    } catch (error) {
-      console.error(error);
-    }
-  }
+
 
   async createMater(){
     try {
