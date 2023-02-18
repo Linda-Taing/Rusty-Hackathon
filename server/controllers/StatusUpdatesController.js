@@ -31,11 +31,5 @@ export class StatusUpdatesController extends BaseController {
         }
     }
 
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> 1bb60c12490a50a6e4a784786f7316765a565ef2
-
 }
 
