@@ -25,8 +25,8 @@ MaterSchema.virtual('Creator', {
     ref: 'Account'
 })
 MaterSchema.virtual('likeCount', {
-    localField: 'creatorId',
-    foreignField: '_id',
+    localField: '_id',
+    foreignField: 'materId',
     count: true,
     ref: 'Liker'
 })
