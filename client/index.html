@@ -266,26 +266,26 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div id=""class="modal-body">
-          <form onsubmit="app.matersController.updateMater()" action="">
+          <form onsubmit="app.matersController.createMater()" action="">
             <div class="mb-3">
-              <label for="user-name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="user-name" aria-describedby="emailHelp">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" name="name" aria-describedby="emailHelp">
             </div>
             <div class="mb-3"
-              <label for="user-voltage" class="form-label">Voltage</label>
-              <input type="number" class="form-control" id="user-voltage">
+              <label for="voltage" class="form-label">Voltage</label>
+              <input type="number" class="form-control" name="voltage">
             </div>
             <div class="mb-3">
-              <label for="user-language" class="form-label">Language</label>
-              <input type="text" class="form-control" id="user-language">
+              <label for="language" class="form-label">Language</label>
+              <input type="text" class="form-control" name="language">
             </div>
             <div class="mb-3">
-              <label for="user-bio" class="form-label">Bio</label>
-              <input type="text" class="form-control" id="user-bio">
+              <label for="bio" class="form-label">Bio</label>
+              <input type="text" class="form-control" name="bio">
             </div>
             <div class="mb-3">
-              <label for="user-type" class="form-label">Type</label>
-              <select name="user-type" id="user-type">
+              <label for="type" class="form-label">Type</label>
+              <select name="type" name="type">
                 NOTE Should probably make the 'selected' one ${this.type} 
                                 vvvvvv
                 <option selected>Type</option>
@@ -297,10 +297,10 @@
                 <option value="Helper">Helper</option>
               </select>
             </div>
-            <div class="mb-3">
+            <!-- <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Voltage</label>
               <input type="text" class="form-control" id="exampleInputPassword1">
-            </div>
+            </div> -->
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
