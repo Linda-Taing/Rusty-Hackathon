@@ -37,7 +37,7 @@ export class Mater{
             <!-- NOTE possibly have an "onhover" where the heart becomes a solid icon? (might be a jonah thing) -->
             <h4 class="mdi mdi-heart-outline"></h4>
             <!-- NOTE onclick -> open up that users profile -->
-            <button class="view-profile" onclick="" >View Profile</button>
+            <button class="view-profile"  data-bs-target="#activeModal" onclick="app.foreignProfilesController.activeMater('${this.id}')" >View Profile</button>
           </div>
         </div>
       </div>
@@ -105,7 +105,7 @@ export class Mater{
     
     get MakeEditForm(){
       return`
-      <form onsubmit="app.matersController.test('${this.id}')" action="">
+      <form onsubmit="app.matersController.updateMater('${this.id}')" action="">
             <div class="mb-3">
               <label for="user-name" class="form-label">Name</label>
               <input type="text" class="form-control" id="user-name" aria-describedby="emailHelp">

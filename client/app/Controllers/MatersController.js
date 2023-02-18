@@ -65,9 +65,7 @@ export class MatersController{
     
   }
 
-  test(){ 
-      window.event.preventDefault()
-      console.log("mater updated");}
+
   async setMater(){
     try {
       await matersService.setMater()
