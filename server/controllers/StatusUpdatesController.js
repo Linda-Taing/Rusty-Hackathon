@@ -12,17 +12,16 @@ export class StatusUpdatesController extends BaseController {
 
     }
 
-
     async makeStatusUpdate(req, res, next) {
         try {
-            // const user = req.userInfo
-            //req.body.creatorId = user.id
-            //req.body.materId = 
+            req.body.materId = req.params.materId
             const updater = await statusUpdatesService.makeStatusUpdate(req.body)
             return res.send(updater)
         } catch (error) {
             next(error)
         }
     }
+
+    
 }
 
