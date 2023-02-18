@@ -9,6 +9,7 @@ export class Mater{
     this.id = data.id
     this.img = this.GenerateImage
     this.creatorId = data.creatorId
+    this.description = data.description
   }
 
 
@@ -28,7 +29,7 @@ export class Mater{
             <h4>${this.name}</h4>
             <h4>${this.language}</h4>
             <h4>${this.voltage}</h4>
-            <h4 class="bio-class">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo deserunt aliquid doloremque maiores, velit numquam.</h4>
+            <h4 class="bio-class">${this.description}</h4>
           </div>
           <div class="col-12 d-flex justify-content-between mt-5">
             <!-- NOTE possibly have an "onhover" where the heart becomes a solid icon? (might be a jonah thing) -->
@@ -47,7 +48,7 @@ export class Mater{
         <img class="mb-5 pb-5" src="${this.img}" alt="">
       </div>
       <div>
-        ({this.bio})
+        ${this.description}
       </div>
         <div class="m-3">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, reiciendis perspiciatis! A nesciunt debitis animi?
