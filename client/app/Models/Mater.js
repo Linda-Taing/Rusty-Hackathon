@@ -97,7 +97,9 @@ export class Mater{
   static CheckAccountHasProfle(){
 
     
-      return`<button data-bs-target="#createModal">create profile</button>`
+      return`<button type="button" class="user-profile-button-edit" data-bs-toggle="modal" data-bs-target="#createModal">
+      Create Profile
+    </button>`
     }
   
     
