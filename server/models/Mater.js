@@ -24,7 +24,12 @@ MaterSchema.virtual('Creator', {
     justOne: true,
     ref: 'Account'
 })
-
+MaterSchema.virtual('likeCount', {
+    localField: 'creatorId',
+    foreignField: '_id',
+    count: true,
+    ref: 'Liker'
+})
 MaterSchema.virtual('StatusUpdate', {
     localField: '_id',
     foreignField: 'materId',
