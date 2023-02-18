@@ -10,7 +10,7 @@ export class Mater{
     this.id = data.id
     this.img = this.GenerateImage
     this.creatorId = data.creatorId
-    this.description = data.description
+    this.description = data.description || "I'm a little rusty"
   }
 
   
@@ -30,7 +30,7 @@ export class Mater{
           <div class="col-12">
             <h4>${this.name}</h4>
             <h4>${this.language}</h4>
-            <h4>Volts: ${this.voltage}</h4>
+            <h4>Volts: ${this.voltage}v</h4>
             <h4 class="bio-class">${this.description}</h4>
           </div>
           <div class="col-12 d-flex justify-content-between mt-5">
