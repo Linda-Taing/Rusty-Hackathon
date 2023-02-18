@@ -182,7 +182,12 @@
 
   <div class="offcanvas offcanvas-end user-profile-offcanvas bg-gradient" tabindex="-1" id="user-profile" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasExampleLabel">${this.name}</h5>
+      <div class="d-flex justify-content-between">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">${this.name}</h5>
+        <!-- <button type="button" class="user-profile-button-edit" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          Edit Profile
+        </button> -->
+      </div>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div id="profile"class="offcanvas-body">
@@ -221,8 +226,75 @@
           </div>
         </div>
       </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 pt-5 mt-5 d-flex justify-content-end">
+            <button type="button" class="user-profile-button-edit" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              Edit Profile
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Profile</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="">
+            <div class="mb-3">
+              <label for="user-name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="user-name" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="user-voltage" class="form-label">Voltage</label>
+              <input type="number" class="form-control" id="user-voltage">
+            </div>
+            <div class="mb-3">
+              <label for="user-language" class="form-label">Language</label>
+              <input type="text" class="form-control" id="user-language">
+            </div>
+            <div class="mb-3">
+              <label for="user-bio" class="form-label">Bio</label>
+              <input type="text" class="form-control" id="user-bio">
+            </div>
+            <div class="mb-3">
+              <label for="user-type" class="form-label">Type</label>
+              <select name="user-type" id="user-type">
+                <!-- NOTE Should probably make the 'selected' one ${this.type} 
+                                vvvvvv-->
+                <option selected>Type</option>
+                <option value="Protocol">Protocol</option>
+                <option value="Toaster">Toaster</option>
+                <option value="Bender">Bender</option>
+                <option value="Assassin">Assassin</option>
+                <option value="Astromech">Astromech</option>
+                <option value="Helper">Helper</option>
+              </select>
+            </div>
+            <!-- <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Voltage</label>
+              <input type="text" class="form-control" id="exampleInputPassword1">
+            </div> -->
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdn.auth0.com/js/auth0-spa-js/1.22/auth0-spa-js.production.js"></script>

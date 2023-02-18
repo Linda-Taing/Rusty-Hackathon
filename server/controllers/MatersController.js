@@ -17,7 +17,7 @@ export class MatersController extends BaseController {
 
   async getMaterById(req, res, next) {
     try {
-      const maters = await matersService.getAllMaters()
+      const maters = await matersService.getMaterById(req.params.materId)
       return res.send(maters)
     } catch (error) {
       next(error)

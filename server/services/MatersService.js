@@ -4,9 +4,7 @@ import { BadRequest } from "../utils/Errors.js"
 
 
 class MatersService {
-  updateMater(materId, body) {
-    throw new Error("Method not implemented.")
-  }
+
   async getAllMaters() {
     const maters = await dbContext.Maters.find()
       .populate('StatusUpdate')
@@ -24,12 +22,18 @@ class MatersService {
     return updatedMater
   }
 
+  async getMaterById(materId) {
 
-
-
-
-
-
+    const maters = await dbContext.Maters.find(materId)
+    return maters
+  }
 }
+
+
+
+
+
+
+
 
 export const matersService = new MatersService()
