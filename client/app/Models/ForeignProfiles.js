@@ -10,10 +10,10 @@ export class ForeignProfiles{
             <img src="${this.img}" alt="" class="foreign-prof-img">
         </div>
         <div class="col-12">
-            <h4>${this.name}</h4>
-            <h4>${this.language}</h4>
-            <h4>Volts: ${this.voltage}v</h4>
-            <h4 class="bio-class">${this.description}</h4>
+            <h3>${this.name}</h3>
+            <h3>${this.language}</h3>
+            <h3>Volts: ${this.voltage}v</h3>
+            <h3 class="bio-class">${this.description}</h3>
         </div>
         <div class="col-12 d-flex justify-content-between mt-5">
             <!-- NOTE possibly have an "onhover" where the heart becomes a solid icon? (might be a jonah thing) -->
