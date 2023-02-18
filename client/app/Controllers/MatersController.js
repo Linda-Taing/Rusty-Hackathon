@@ -55,15 +55,19 @@ export class MatersController{
   async updateMater(materId){
     try {
     window.event.preventDefault()
-    const form = window.event.target
-    const formData = getFormData(form)
-    await matersService.updateMater(materId, formData)
+    console.log("mater updated");
+    // const form = window.event.target
+    // const formData = getFormData(form)
+    // await matersService.updateMater(materId, formData)
     } catch (error) {
       console.error(error);
     }
     
   }
 
+  test(){ 
+      window.event.preventDefault()
+      console.log("mater updated");}
   async setMater(){
     try {
       await matersService.setMater()
