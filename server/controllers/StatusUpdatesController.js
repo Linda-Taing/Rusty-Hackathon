@@ -7,9 +7,18 @@ export class StatusUpdatesController extends BaseController {
     constructor() {
         super('api/statusUpdates')
         this.router
+            .get('', this.getStatusUpdate)
             .use(Auth0Provider.getAuthorizedUserInfo)
             .post('/:materId', this.makeStatusUpdate)
 
+    }
+    async getStatusUpdate(req, res, next) {
+        try {
+            const update = await statusUpdatesService.getStatusUpdate(req.params.materId)
+            return res.send(update)
+        } catch (error) {
+            next(error)
+        }
     }
 
     async makeStatusUpdate(req, res, next) {
@@ -22,6 +31,11 @@ export class StatusUpdatesController extends BaseController {
         }
     }
 
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 1bb60c12490a50a6e4a784786f7316765a565ef2
+
 }
 
