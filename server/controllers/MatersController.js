@@ -1,5 +1,6 @@
 import { Auth0Provider } from "@bcwdev/auth0provider"
 import { matersService } from "../services/MatersService.js"
+import { statusUpdatesService } from "../services/StatusUpdatesService.js"
 import BaseController from "../utils/BaseController.js"
 
 
@@ -13,6 +14,14 @@ export class MatersController extends BaseController {
       .post('', this.createMater)
       .put('/:materId', this.updateMater)
 
+  }
+  async getStatusUpdate(req, res, next) {
+    try {
+      const update = await statusUpdatesService.getStatusUpdate(req.params.materId)
+      return res.send(update)
+    } catch (error) {
+      next(error)
+    }
   }
 
   async getMaterById(req, res, next) {

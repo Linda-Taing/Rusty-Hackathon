@@ -4,6 +4,11 @@ import { BadRequest } from "../utils/Errors.js"
 
 
 class MatersService {
+  async getStatusUpdate(materId) {
+    const update = await dbContext.Maters.find({ materId })
+      .populate('Mater', 'name imgUrl')
+    return update
+  }
 
   async getAllMaters() {
     const maters = await dbContext.Maters.find()
@@ -18,7 +23,8 @@ class MatersService {
   }
 
   async updateMater(materId, body) {
-    const updatedMater = await dbContext.Maters.findByIdAndUpdate(materId, body)
+    const updatedMater = await dbContext.Maters.findById(materId)
+    updatedMater.set(body)
     return updatedMater
   }
 
