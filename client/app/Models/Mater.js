@@ -82,53 +82,6 @@ export class Mater{
           </div>
         </div>
       </div>
-    `
-  }
-
-  get CheckAccountHasProfle(){
-
-    let accountId = appState.account.id
-    let profile = appState.maters.find(m => m.creatorId == accountId)
-    if(!profile){
-      return`<button>create profile</button>`
-    }
-    else return `
-    <h5>${this.name}</h5>
-    <div>
-        <img class="mb-5 pb-5" src="${this.img}" alt="">
-      </div>
-      <div>
-        ${this.language}
-      </div>
-        <div class="m-3">
-        ${this.description}
-      </div>
-      <!-- <div class="dropdown mt-3">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-          Dropdown button
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-      </div> -->
-      <div class="container">
-        <div class="row user-profile-lists">
-          <div class="col-6 left-list">
-            <h4 class="user-profile-list-title">Your Likes</h4>
-            <h6>JoBot</h6>
-            <h6>JacoBot</h6>
-            <h6>RichBot</h6>
-            <h6>LindaBot</h6>
-            <h6>BryBot</h6>
-          </div>
-          <div class="col-6">
-            <h4 class="user-profile-list-title">Your Mutuals</h4>
-            <h6><span class="mdi mdi-robot-love" onclick=""></span>JoBot</h6>
-          </div>
-        </div>
-      </div>
       <div class="container">
         <div class="row">
           <div class="col-12 pt-5 mt-5 d-flex justify-content-end">
@@ -141,5 +94,13 @@ export class Mater{
     `
   }
 
+  static CheckAccountHasProfle(){
 
-}
+    
+      return`<button>create profile</button>`
+    }
+  
+    
+  }
+
+

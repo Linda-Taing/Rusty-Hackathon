@@ -1,4 +1,5 @@
 import { appState } from "../AppState.js";
+import { Mater } from "../Models/Mater.js";
 import { accountService } from "../Services/AccountService.js";
 import { matersService } from "../Services/MatersService.js";
 import { getFormData } from "../Utils/FormHandler.js";
@@ -12,9 +13,12 @@ function _drawMaters(){
 }
 
 function _drawMater(){
-  console.log(appState.mater);
-  let template = appState.mater.CheckAccountHasProfle
-  setHTML('profile', template)
+
+  if(!appState.mater){
+    setHTML('profile', Mater.CheckAccountHasProfle())}
+
+    else{let template = appState.mater.MaterProfile
+    setHTML('profile', template)}
 }
 
 export class MatersController{
