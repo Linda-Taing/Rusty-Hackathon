@@ -13,7 +13,7 @@ function _drawMaters(){
 
 function _drawMater(){
   console.log(appState.mater);
-  let template = appState.mater.MaterProfile
+  let template = appState.mater.CheckAccountHasProfle
   setHTML('profile', template)
 }
 
