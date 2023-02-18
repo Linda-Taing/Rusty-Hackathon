@@ -37,7 +37,9 @@ export class Mater{
             <!-- NOTE possibly have an "onhover" where the heart becomes a solid icon? (might be a jonah thing) -->
             <h4 class="mdi mdi-heart-outline"></h4>
             <!-- NOTE onclick -> open up that users profile -->
-            <button class="view-profile" data-bs-toggle="modal"  data-bs-target="#activeMater" onclick="app.foreignProfilesController.activeMater('${this.id}')" >View Profile</button>
+            <button type="button" class="user-profile-button" data-bs-toggle="modal" data-bs-target="#activeMaterModal" onclick="app.foreignProfilesController.activeMater('${this.id}')">
+  View Profile
+</button>
           </div>
         </div>
       </div>
@@ -46,13 +48,13 @@ export class Mater{
 
   get activeMater(){
     return`
-    <div class="d-flex align-content-center col-4 foreign-prof bg-gradient">
+
     <div class="row">
     <div class="col-12">
         <img src="${this.img}" alt="" class="foreign-prof-img">
     </div>
     <div class="col-12">
-        <h3>${this.name}</h3>
+        <h3 class="modal-bio">${this.name}</h3>
         <h3>${this.language}</h3>
         <h3>Volts: ${this.voltage}v</h3>
         <h3 class="bio-class">${this.description}</h3>
@@ -62,7 +64,7 @@ export class Mater{
         <h1 class="mdi mdi-heart-outline"></h1>
     </div>
     </div>
-</div>
+
     `
 }
 

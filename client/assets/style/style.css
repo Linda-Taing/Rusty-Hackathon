@@ -74,3 +74,13 @@ max-width: 100%;
     color: white;
     font-family: 'IM Fell English SC', serif;
 }
+
+.modal-style{
+    background-color: #673f25;
+    color: white;
+}
+
+.modal-bio{
+    color: white;
+    font-family: 'IM Fell English SC', serif;
+}
