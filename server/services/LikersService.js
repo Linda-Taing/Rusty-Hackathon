@@ -8,6 +8,7 @@ class LikersService {
   }
   async becomeLiker(likerData) {
     const liker = await dbContext.Likers.create(likerData)
+    await liker.populate('Creator Mater')
     return liker
   }
 
