@@ -1,9 +1,9 @@
 import { dbContext } from "../db/DbContext.js"
 
 class LikersService {
-  async getLikerssByBirdId(materId) {
-    const likers = await dbContext.Likers.find({ matersId }).
-    populate('mater', 'name imgUrl')
+  async getLikersByBirdId(materId) {
+    const likers = await dbContext.Likers.find({ materId }).
+      populate('mater', 'name imgUrl')
     return likers
   }
   async becomeLiker(likerData) {
