@@ -21,7 +21,7 @@ export class Mater{
   }
 
   get ProfileTemplate(){
-    return`
+    return /*html*/`
     <div class="d-flex align-content-center col-4 foreign-prof bg-gradient">
         <div class="row">
           <div class="col-12">
@@ -37,7 +37,7 @@ export class Mater{
             <!-- NOTE possibly have an "onhover" where the heart becomes a solid icon? (might be a jonah thing) -->
             <h4 class="mdi mdi-heart-outline"></h4>
             <!-- NOTE onclick -> open up that users profile -->
-            <button class="view-profile">View Profile</button>
+            <button class="view-profile" onclick="" >View Profile</button>
           </div>
         </div>
       </div>

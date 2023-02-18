@@ -2,6 +2,10 @@
 
 export class ForeignProfilesController{
     constructor(){
-        console.log('ForeignProfilesController');
+        
+    }
+    
+    activeMater(){
+        console.log('active mater');
     }
 }

@@ -13,7 +13,7 @@ export const MaterSchema = new Schema(
         },
         imgUrl: { type: String },
         description: { type: String, maxLength: 300 },
-        creatorId: { type: Schema.Types.ObjectId, required: true, ref: "Account" },
+        creatorId: { type: Schema.Types.ObjectId, required: true, ref: "Liker" },
     },
     { timestamps: true, toJSON: { virtuals: true } }
 );
