@@ -107,7 +107,7 @@ export class Mater{
       <div class="container">
         <div class="row">
           <div class="col-12 pt-5 mt-5 d-flex justify-content-end">
-            <button type="button" class="user-profile-button-edit" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <button type="button" class="user-profile-button-edit" data-bs-toggle="modal" data-bs-target="#updateModal">
               Edit Profile
             </button>
           </div>
@@ -127,7 +127,8 @@ export class Mater{
     
     get MakeEditForm(){
       return`
-      <form onsubmit="app.matersController.updateMater('${this.id}')" action="">
+      <form onsubmit="app.matersController.updateMater('${this.id}')">
+      <h1>something</h1>
             <div class="mb-3">
               <label for="user-name" class="form-label">Name</label>
               <input type="text" class="form-control" id="user-name" aria-describedby="emailHelp">
@@ -156,10 +157,10 @@ export class Mater{
                 <option value="Helper">Helper</option>
               </select>
             </div>
-            <!-- <div class="mb-3">
+            <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Voltage</label>
               <input type="text" class="form-control" id="exampleInputPassword1">
-            </div> -->
+            </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
       `

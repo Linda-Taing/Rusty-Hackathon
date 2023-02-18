@@ -8,13 +8,16 @@ class MatersService{
   async setMater(){
   const accountId = appState.account.id
   console.log(accountId);
+  // @ts-ignore
   appState.mater = appState.maters.find(m => m.creatorId == accountId)
   }
-  async updateMater(materId, formData) {
+  
+  async updateMater(formData, materId) {
+    const res = await server.put(`/api/maters/${materId}`, formData)
+    console.log('UPDATING A MATER', res.data);
     const materIndex = appState.maters.findIndex(m => m.id == materId)
-    const updatedMater = server.put(`/api/maters/${materId}`, formData)
-    const newMater = new Mater(updatedMater)
-    appState.maters.splice(materIndex, 1, newMater)
+    // const newMater = new Mater(updatedMater)
+    appState.maters.splice(materIndex, 1, new Mater(res.data))
     appState.emit('maters')
   }
 

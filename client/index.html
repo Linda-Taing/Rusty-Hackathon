@@ -265,7 +265,7 @@
           <h1 class="modal-title fs-5" id="staticBackdropLabel">Create Profile</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div id="updateForm"class="modal-body">
+        <div id=""class="modal-body">
           <!-- <form  onsubmit="app.matersController.updateMater()" action="">
             <div class="mb-3">
               <label for="user-name" class="form-label">Name</label>
@@ -286,8 +286,9 @@
             <div class="mb-3">
               <label for="user-type" class="form-label">Type</label>
               <select name="user-type" id="user-type">
-                                vvvvvv
-                <option selected>Type</option>
+                <!-- NOTE Should probably make the 'selected' one ${this.type} 
+                                vvvvvv-->
+                <!-- <option selected>Type</option>
                 <option value="Protocol">Protocol</option>
                 <option value="Toaster">Toaster</option>
                 <option value="Bender">Bender</option>
@@ -334,15 +335,15 @@
 
 
   <!-- Modal || Edit Profile-->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal fade" id="updateModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Profile</h1>
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Create Profile</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          <form action="">
+        <div id="updateForm"class="modal-body">
+          <!-- <form action="">
             <div class="mb-3">
               <label for="user2-name" class="form-label">Name</label>
               <input type="text" class="form-control" id="user2-name" aria-describedby="emailHelp">
@@ -362,8 +363,7 @@
             <div class="mb-3">
               <label for="user2-type" class="form-label">Type</label>
               <select name="user2-type" id="user2-type">
-                <!-- NOTE Should probably make the 'selected' one ${this.type} 
-                                vvvvvv-->
+                NOTE Should probably make the 'selected' one ${this.type} 
                 <option selected>Type</option>
                 <option value="Protocol">Protocol</option>
                 <option value="Toaster">Toaster</option>
@@ -372,13 +372,13 @@
                 <option value="Astromech">Astromech</option>
                 <option value="Helper">Helper</option>
               </select>
-            </div>
+            </div> -->
             <!-- <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Voltage</label>
               <input type="text" class="form-control" id="exampleInputPassword1">
             </div> -->
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+            <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+          <!-- </form>  -->
         </div>
       </div>
     </div>

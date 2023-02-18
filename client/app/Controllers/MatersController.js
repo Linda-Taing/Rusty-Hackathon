@@ -1,5 +1,6 @@
 import { appState } from "../AppState.js";
 import { Mater } from "../Models/Mater.js";
+// @ts-ignore
 import { accountService } from "../Services/AccountService.js";
 import { matersService } from "../Services/MatersService.js";
 import { getFormData } from "../Utils/FormHandler.js";
@@ -33,6 +34,7 @@ export class MatersController{
 
   async getMaters(){
     try {
+      // @ts-ignore
       const maters = await matersService.getMaters()
     } catch (error) {
       console.error(error);
@@ -43,7 +45,9 @@ export class MatersController{
 
   async createMater(){
     try {
+      // @ts-ignore
       window.event.preventDefault()
+      // @ts-ignore
       const form = window.event.target
       const formData = getFormData(form)
       await matersService.createMater(formData)
@@ -52,13 +56,16 @@ export class MatersController{
     }
   }
 
+  
   async updateMater(materId){
     try {
-    window.event.preventDefault()
-    console.log("mater updated");
-    // const form = window.event.target
-    // const formData = getFormData(form)
-    // await matersService.updateMater(materId, formData)
+      // @ts-ignore
+      window.event?.preventDefault()
+      // console.log("mater updated");
+      // @ts-ignore
+      const form = window.event?.target
+      const formData = getFormData(form)
+      await matersService.updateMater(formData, materId)
     } catch (error) {
       console.error(error);
     }
