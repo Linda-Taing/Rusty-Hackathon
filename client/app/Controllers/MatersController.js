@@ -10,16 +10,25 @@ function _drawMaters(){
   setHTML('foreign-profiles', template)
 }
 
+function _drawMater(){
+  debugger
+  console.log(appState.mater);
+  setHTML('profile', appState.mater.MaterProfile)
+}
+
 export class MatersController{
 
   constructor(){
     this.getMaters()
+    this.setMater()
     appState.on('maters', _drawMaters)
+    appState.on('mater', _drawMater)
   }
 
   async getMaters(){
     try {
       const maters = await matersService.getMaters()
+      this.setMater()
     } catch (error) {
       console.error(error);
     }
@@ -54,6 +63,14 @@ export class MatersController{
       console.error(error);
     }
     
+  }
+
+  async setMater(){
+    try {
+      await matersService.setMater()
+    } catch (error) {
+      console.error(error)
+    }
   }
 
 }
