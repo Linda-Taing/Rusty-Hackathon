@@ -21,7 +21,7 @@ class MatersService{
   async createMater(formData) {
     const mater = await server.post('/api/maters')
     console.log("creating mater data from server", mater.data);
-    if(!mater){throw new Error("No mater to add!")}
+    if(!mater){throw new Error("No Mater to add!")}
     const newMater = new Mater(mater.data)
     console.log("Newly created Mater", newMater);
     appState.maters.push(newMater)
