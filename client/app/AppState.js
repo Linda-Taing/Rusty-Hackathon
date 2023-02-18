@@ -16,6 +16,8 @@ class AppState extends EventEmitter {
 
   /** @type {import('./Models/Mater').Mater | null} */
   mater = null
+
+  activeMater = null;
 }
 
 export const appState = new Proxy(new AppState(), {
