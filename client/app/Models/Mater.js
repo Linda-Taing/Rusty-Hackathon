@@ -105,7 +105,7 @@ export class Mater{
     
     get MakeEditForm(){
       return`
-      <form  onsubmit="app.matersController.updateMater('${this.id}')" action="">
+      <form onsubmit="app.matersController.test('${this.id}')" action="">
             <div class="mb-3">
               <label for="user-name" class="form-label">Name</label>
               <input type="text" class="form-control" id="user-name" aria-describedby="emailHelp">
