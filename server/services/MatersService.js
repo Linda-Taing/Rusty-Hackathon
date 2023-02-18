@@ -29,6 +29,7 @@ class MatersService {
     const updatedMater = await dbContext.Maters.findById(materId)
     // @ts-ignore
     updatedMater.set(body)
+    await updatedMater.save()
     return updatedMater
   }
 
