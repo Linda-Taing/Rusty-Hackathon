@@ -23,7 +23,8 @@ class MatersService {
   }
 
   async updateMater(materId, body) {
-    const updatedMater = await dbContext.Maters.findByIdAndUpdate(materId, body)
+    const updatedMater = await dbContext.Maters.findById(materId)
+    updatedMater.set(body)
     return updatedMater
   }
 
