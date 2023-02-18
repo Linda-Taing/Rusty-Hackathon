@@ -8,12 +8,7 @@ export const LikerSchema = new Schema(
   { timestamps: true, toJSON: { virtuals: true } }
 )
 
-LikerSchema.virtual('Mater', {
-  localField: 'materId',
-  foreignField: '_id',
-  justOne: true,
-  ref: 'Mater'
-})
+
 LikerSchema.virtual('Creator', {
   localField: 'creatorId',
   foreignField: '_id',
